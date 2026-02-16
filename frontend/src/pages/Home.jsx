@@ -658,12 +658,38 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Built on Responsible Sourcing
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <motion.h2 
+              className="text-4xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 100 }}
+            >
+              <motion.span
+                animate={{
+                  backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                }}
+                style={{
+                  backgroundImage: "linear-gradient(90deg, #111827, #10b981, #111827)",
+                  backgroundSize: "200% 100%",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+                transition={{ duration: 5, repeat: Infinity }}
+              >
+                Built on Responsible Sourcing
+              </motion.span>
+            </motion.h2>
+            <motion.p 
+              className="text-lg text-gray-600 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
               Every product meets rigorous environmental and ethical standards
-            </p>
+            </motion.p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -679,17 +705,79 @@ const Home = () => {
               return (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="text-center p-6 rounded-xl hover:bg-emerald-50 transition-colors"
+                  initial={{ opacity: 0, y: 30, scale: 0.8 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ 
+                    delay: idx * 0.15,
+                    type: "spring",
+                    stiffness: 100
+                  }}
+                  whileHover={{ 
+                    y: -10,
+                    scale: 1.05,
+                  }}
+                  className="text-center p-6 rounded-xl hover:bg-emerald-50 transition-colors relative overflow-hidden group"
                 >
-                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  {/* Animated background circle */}
+                  <motion.div
+                    className="absolute inset-0 bg-emerald-100 rounded-xl opacity-0 group-hover:opacity-100"
+                    initial={{ scale: 0 }}
+                    whileHover={{ scale: 1 }}
+                    transition={{ duration: 0.4 }}
+                  />
+
+                  <motion.div 
+                    className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4 relative z-10"
+                    animate={{
+                      rotate: [0, 360],
+                    }}
+                    transition={{
+                      duration: 20,
+                      repeat: Infinity,
+                      ease: "linear"
+                    }}
+                    whileHover={{
+                      scale: 1.2,
+                      rotate: 180,
+                      transition: { duration: 0.4 }
+                    }}
+                  >
                     <Icon className="text-emerald-600" size={32} />
-                  </div>
-                  <h3 className="font-bold text-gray-900 mb-2">{cert.title}</h3>
-                  <p className="text-sm text-gray-600">{cert.description}</p>
+                  </motion.div>
+                  
+                  <motion.h3 
+                    className="font-bold text-gray-900 mb-2 relative z-10"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.15 + 0.3 }}
+                  >
+                    {cert.title}
+                  </motion.h3>
+                  <motion.p 
+                    className="text-sm text-gray-600 relative z-10"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.15 + 0.4 }}
+                  >
+                    {cert.description}
+                  </motion.p>
+
+                  {/* Sparkle effect on hover */}
+                  <motion.div
+                    className="absolute top-2 right-2 w-2 h-2 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100"
+                    animate={{
+                      scale: [0, 1, 0],
+                      opacity: [0, 1, 0],
+                    }}
+                    transition={{
+                      duration: 1.5,
+                      repeat: Infinity,
+                      delay: idx * 0.3
+                    }}
+                  />
                 </motion.div>
               );
             })}
@@ -699,10 +787,56 @@ const Home = () => {
 
       {/* Global Stats */}
       <section ref={statsRef} className="py-20 px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-900 text-white relative overflow-hidden">
+        {/* Animated background elements */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-emerald-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl" />
+          <motion.div 
+            className="absolute top-0 left-0 w-96 h-96 bg-emerald-500 rounded-full blur-3xl"
+            animate={{
+              scale: [1, 1.2, 1],
+              x: [0, 50, 0],
+              y: [0, 30, 0],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div 
+            className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"
+            animate={{
+              scale: [1, 1.3, 1],
+              x: [0, -50, 0],
+              y: [0, -30, 0],
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
         </div>
+
+        {/* Floating particles */}
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-white rounded-full"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
 
         <div className="container mx-auto relative z-10">
           <motion.div
@@ -711,25 +845,100 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold mb-4">Our Global Footprint</h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <motion.h2 
+              className="text-4xl font-bold mb-4"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 100 }}
+            >
+              Our Global Footprint
+            </motion.h2>
+            <motion.p 
+              className="text-lg text-gray-300 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
               We connect verified suppliers from 45+ countries to top-tier international retailers
-            </p>
+            </motion.p>
           </motion.div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {globalStats.map((stat, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={isStatsInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="text-center"
+                initial={{ opacity: 0, scale: 0.3, y: 50 }}
+                animate={isStatsInView ? { opacity: 1, scale: 1, y: 0 } : {}}
+                transition={{ 
+                  delay: idx * 0.15, 
+                  duration: 0.6,
+                  type: "spring",
+                  stiffness: 100
+                }}
+                className="text-center relative group"
               >
-                <div className="text-5xl font-bold text-emerald-400 mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-gray-300 font-medium">{stat.label}</div>
+                {/* Background glow */}
+                <motion.div
+                  className="absolute inset-0 bg-emerald-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100"
+                  animate={{
+                    scale: [1, 1.1, 1],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                  }}
+                />
+
+                <motion.div
+                  className="relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+                  whileHover={{ 
+                    scale: 1.05,
+                    backgroundColor: "rgba(255, 255, 255, 0.1)",
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div 
+                    className="text-5xl font-bold text-emerald-400 mb-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isStatsInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ delay: idx * 0.15 + 0.3 }}
+                  >
+                    <motion.span
+                      animate={{
+                        textShadow: [
+                          "0 0 10px rgba(52, 211, 153, 0.5)",
+                          "0 0 20px rgba(52, 211, 153, 0.8)",
+                          "0 0 10px rgba(52, 211, 153, 0.5)",
+                        ]
+                      }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
+                      {stat.value}
+                    </motion.span>
+                  </motion.div>
+                  <motion.div 
+                    className="text-gray-300 font-medium"
+                    initial={{ opacity: 0 }}
+                    animate={isStatsInView ? { opacity: 1 } : {}}
+                    transition={{ delay: idx * 0.15 + 0.5 }}
+                  >
+                    {stat.label}
+                  </motion.div>
+
+                  {/* Animated border */}
+                  <motion.div
+                    className="absolute inset-0 rounded-2xl border-2 border-emerald-400/0 group-hover:border-emerald-400/50"
+                    animate={{
+                      borderRadius: ["16px", "20px", "16px"],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                    }}
+                  />
+                </motion.div>
               </motion.div>
             ))}
           </div>
