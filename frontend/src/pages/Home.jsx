@@ -433,31 +433,90 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="text-emerald-600 text-sm font-semibold uppercase tracking-wide">
+            <motion.span 
+              className="text-emerald-600 text-sm font-semibold uppercase tracking-wide inline-block"
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ type: "spring", stiffness: 200 }}
+            >
               Simple & Efficient
-            </span>
-            <h2 className="text-4xl font-bold text-gray-900 mt-4 mb-4">
-              How <span className="text-emerald-600">MTG</span> Works
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            </motion.span>
+            <motion.h2 
+              className="text-4xl font-bold text-gray-900 mt-4 mb-4"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
+              How <motion.span 
+                className="text-emerald-600"
+                animate={{ 
+                  textShadow: ["0 0 0px rgba(16, 185, 129, 0)", "0 0 20px rgba(16, 185, 129, 0.5)", "0 0 0px rgba(16, 185, 129, 0)"]
+                }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+              >
+                MTG
+              </motion.span> Works
+            </motion.h2>
+            <motion.p 
+              className="text-lg text-gray-600 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
               A next-generation B2B marketplace simplifying sustainable sourcing for global trade.
-            </p>
+            </motion.p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {howItWorksSteps.map((step, idx) => (
               <motion.div
                 key={step.step}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.2 }}
+                initial={{ opacity: 0, y: 50, scale: 0.8 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ 
+                  delay: idx * 0.2,
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 15
+                }}
                 className="relative"
               >
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 h-full">
-                  {/* Avatar Area - Placeholder for 3D character */}
-                  <div className="w-40 h-40 mx-auto mb-6 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center relative overflow-hidden shadow-lg">
-                    <img
+                <motion.div 
+                  className="bg-white rounded-2xl p-8 shadow-lg h-full relative overflow-hidden"
+                  whileHover={{ 
+                    y: -10,
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {/* Background gradient on hover */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-transparent opacity-0"
+                    whileHover={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+
+                  {/* Avatar Area with enhanced animation */}
+                  <motion.div 
+                    className="w-40 h-40 mx-auto mb-6 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full flex items-center justify-center relative overflow-hidden shadow-lg"
+                    animate={{
+                      boxShadow: [
+                        "0 10px 30px rgba(59, 130, 246, 0.2)",
+                        "0 20px 40px rgba(59, 130, 246, 0.3)",
+                        "0 10px 30px rgba(59, 130, 246, 0.2)",
+                      ]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                    whileHover={{ 
+                      scale: 1.1,
+                      rotate: 5,
+                    }}
+                  >
+                    <motion.img
                       src={`https://images.unsplash.com/photo-${
                         idx === 0 ? '1573496359142-b89e5e5eadb8' : 
                         idx === 1 ? '1560250097-0b93528c311a' : 
@@ -465,29 +524,107 @@ const Home = () => {
                       }?w=400&q=80`}
                       alt={`Step ${step.step}`}
                       className="w-full h-full object-cover"
+                      initial={{ scale: 1.2, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.2 + 0.3, duration: 0.8 }}
                     />
-                    <div className="absolute bottom-2 left-2 bg-white px-3 py-1 rounded-full shadow-md flex items-center space-x-1">
+                    
+                    {/* Badge with pulse animation */}
+                    <motion.div 
+                      className="absolute bottom-2 left-2 bg-white px-3 py-1 rounded-full shadow-md flex items-center space-x-1"
+                      initial={{ scale: 0, rotate: -180 }}
+                      whileInView={{ scale: 1, rotate: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: idx * 0.2 + 0.5, type: "spring" }}
+                      animate={{
+                        y: [0, -3, 0],
+                      }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    >
                       <CheckCircle className="text-emerald-600" size={14} />
                       <span className="text-xs font-semibold text-gray-800">{step.badge}</span>
-                    </div>
-                  </div>
+                    </motion.div>
 
-                  {/* Step Number */}
-                  <div className="w-12 h-12 bg-emerald-500 text-white rounded-xl flex items-center justify-center mx-auto mb-4 font-bold text-xl shadow-lg">
+                    {/* Rotating ring */}
+                    <motion.div
+                      className="absolute inset-0 border-4 border-emerald-400/30 rounded-full"
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                    />
+                  </motion.div>
+
+                  {/* Step Number with bounce */}
+                  <motion.div 
+                    className="w-12 h-12 bg-emerald-500 text-white rounded-xl flex items-center justify-center mx-auto mb-4 font-bold text-xl shadow-lg relative z-10"
+                    initial={{ scale: 0, rotate: -180 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.2 + 0.6, type: "spring", stiffness: 200 }}
+                    whileHover={{ 
+                      scale: 1.2,
+                      rotate: 360,
+                      backgroundColor: "#059669"
+                    }}
+                  >
                     {step.step}
-                  </div>
+                  </motion.div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">
+                  <motion.h3 
+                    className="text-xl font-bold text-gray-900 mb-3 text-center relative z-10"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.2 + 0.7 }}
+                  >
                     {step.title}
-                  </h3>
-                  <p className="text-gray-600 text-center text-sm leading-relaxed">
+                  </motion.h3>
+                  <motion.p 
+                    className="text-gray-600 text-center text-sm leading-relaxed relative z-10"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.2 + 0.8 }}
+                  >
                     {step.description}
-                  </p>
-                </div>
+                  </motion.p>
 
-                {/* Connector Line */}
+                  {/* Decorative corner element */}
+                  <motion.div
+                    className="absolute -bottom-10 -right-10 w-32 h-32 bg-emerald-500/5 rounded-full"
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0.5, 0.8, 0.5],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      delay: idx * 0.5
+                    }}
+                  />
+                </motion.div>
+
+                {/* Connector Line with animation */}
                 {idx < howItWorksSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-20 -right-4 w-8 h-0.5 bg-emerald-200" />
+                  <motion.div 
+                    className="hidden md:block absolute top-20 -right-4 w-8 h-0.5 bg-emerald-200 z-20"
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.2 + 1, duration: 0.6 }}
+                  >
+                    <motion.div
+                      className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-emerald-500 rounded-full"
+                      animate={{
+                        scale: [1, 1.5, 1],
+                        opacity: [1, 0.5, 1],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                      }}
+                    />
+                  </motion.div>
                 )}
               </motion.div>
             ))}
