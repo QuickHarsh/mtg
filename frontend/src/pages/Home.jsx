@@ -18,66 +18,196 @@ const Home = () => {
         <div className="container mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-block mb-4">
-                <span className="text-emerald-600 text-sm font-semibold uppercase tracking-wide bg-emerald-50 px-4 py-2 rounded-full">
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="inline-block mb-4"
+              >
+                <motion.span 
+                  className="text-emerald-600 text-sm font-semibold uppercase tracking-wide bg-emerald-50 px-4 py-2 rounded-full inline-block"
+                  animate={{ 
+                    boxShadow: ["0 0 0 0 rgba(16, 185, 129, 0)", "0 0 0 10px rgba(16, 185, 129, 0)", "0 0 0 0 rgba(16, 185, 129, 0)"]
+                  }}
+                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+                >
                   Enterprise Sourcing
-                </span>
-              </div>
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Take Your Craft
-                <span className="block text-emerald-600">Global.</span>
-              </h1>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl">
+                </motion.span>
+              </motion.div>
+              
+              <motion.h1 
+                className="text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <motion.span
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                >
+                  Take Your Craft
+                </motion.span>
+                <motion.span 
+                  className="block text-emerald-600"
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                >
+                  Global.
+                </motion.span>
+              </motion.h1>
+              
+              <motion.p 
+                className="text-lg text-gray-600 mb-8 leading-relaxed max-w-xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.9 }}
+              >
                 The world's most sustainable B2B sourcing network. Connect with international verified suppliers seeking for ethical, high-quality production partners.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              </motion.p>
+              
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.1 }}
+              >
                 <Link to="/products">
-                  <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-6 text-lg group">
-                    Explore Collections
-                    <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-                  </Button>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-6 text-lg group relative overflow-hidden">
+                      <motion.span
+                        className="absolute inset-0 bg-emerald-500"
+                        initial={{ x: "-100%" }}
+                        whileHover={{ x: 0 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                      <span className="relative z-10 flex items-center">
+                        Explore Collections
+                        <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                      </span>
+                    </Button>
+                  </motion.div>
                 </Link>
                 <Link to="/contact">
-                  <Button variant="outline" className="border-gray-300 hover:border-emerald-600 hover:text-emerald-600 px-8 py-6 text-lg">
-                    Request Consultation
-                  </Button>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Button variant="outline" className="border-gray-300 hover:border-emerald-600 hover:text-emerald-600 px-8 py-6 text-lg">
+                      Request Consultation
+                    </Button>
+                  </motion.div>
                 </Link>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
 
             {/* Right Image */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, x: 50, scale: 0.9 }}
+              animate={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4, type: "spring" }}
               className="relative"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
+              <motion.div 
+                className="relative rounded-2xl overflow-hidden shadow-2xl"
+                animate={{ 
+                  y: [0, -10, 0],
+                }}
+                transition={{ 
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <motion.img
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80"
                   alt="Artisan crafting textiles"
                   className="w-full h-[500px] object-cover"
+                  initial={{ scale: 1.2 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 1.5 }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1, delay: 0.5 }}
+                />
+                
+                {/* Floating badge */}
+                <motion.div 
+                  className="absolute bottom-6 left-6 right-6"
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
+                >
+                  <motion.div 
+                    className="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg"
+                    whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 1)" }}
+                    transition={{ duration: 0.3 }}
+                  >
                     <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
+                      <motion.div 
+                        className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center"
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                      >
                         <Leaf className="text-emerald-600" size={24} />
-                      </div>
+                      </motion.div>
                       <div>
-                        <p className="font-semibold text-gray-900">GOTS Certified</p>
-                        <p className="text-sm text-gray-600">100% Sustainable Materials</p>
+                        <motion.p 
+                          className="font-semibold text-gray-900"
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 1 }}
+                        >
+                          GOTS Certified
+                        </motion.p>
+                        <motion.p 
+                          className="text-sm text-gray-600"
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 1.1 }}
+                        >
+                          100% Sustainable Materials
+                        </motion.p>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
+                  </motion.div>
+                </motion.div>
+
+                {/* Decorative particles */}
+                <motion.div
+                  className="absolute top-10 right-10 w-20 h-20 bg-emerald-400/20 rounded-full blur-xl"
+                  animate={{
+                    scale: [1, 1.5, 1],
+                    opacity: [0.3, 0.6, 0.3],
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+                <motion.div
+                  className="absolute bottom-20 right-20 w-16 h-16 bg-blue-400/20 rounded-full blur-xl"
+                  animate={{
+                    scale: [1, 1.8, 1],
+                    opacity: [0.2, 0.5, 0.2],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: 1
+                  }}
+                />
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -120,54 +250,164 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Our Product Collections
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <motion.h2 
+              className="text-4xl font-bold text-gray-900 mb-4"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                Our Product
+              </motion.span>{" "}
+              <motion.span
+                className="text-emerald-600"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4 }}
+              >
+                Collections
+              </motion.span>
+            </motion.h2>
+            <motion.p 
+              className="text-lg text-gray-600 max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+            >
               Premium eco-conscious home textiles sourced responsibly and delivered globally
-            </p>
+            </motion.p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {productCategories.map((category, idx) => (
               <motion.div
                 key={category.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                whileHover={{ y: -8 }}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ 
+                  delay: idx * 0.15,
+                  duration: 0.6,
+                  type: "spring",
+                  stiffness: 100
+                }}
                 className="group"
               >
                 <Link to={`/products#${category.id}`}>
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <motion.div 
+                    className="bg-white rounded-2xl overflow-hidden shadow-lg relative"
+                    whileHover={{ 
+                      y: -12, 
+                      scale: 1.02,
+                      boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                      transition: { duration: 0.3 }
+                    }}
+                  >
                     <div className="relative h-64 overflow-hidden">
-                      <img
+                      <motion.img
                         src={category.image}
                         alt={category.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover"
+                        whileHover={{ scale: 1.15, rotate: 2 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <span className="inline-block bg-emerald-500 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                      <motion.div 
+                        className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/40 to-transparent"
+                        initial={{ opacity: 0.7 }}
+                        whileHover={{ opacity: 0.9 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                      
+                      {/* Animated overlay on hover */}
+                      <motion.div
+                        className="absolute inset-0 bg-emerald-600/20 backdrop-blur-[2px]"
+                        initial={{ opacity: 0 }}
+                        whileHover={{ opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                      
+                      <motion.div 
+                        className="absolute bottom-4 left-4 right-4"
+                        initial={{ y: 10, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ delay: idx * 0.15 + 0.3 }}
+                      >
+                        <motion.span 
+                          className="inline-block bg-emerald-500 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2 shadow-lg"
+                          whileHover={{ scale: 1.1, backgroundColor: "#059669" }}
+                          transition={{ duration: 0.2 }}
+                        >
                           {category.features[0]}
-                        </span>
-                      </div>
+                        </motion.span>
+                      </motion.div>
+
+                      {/* Shine effect */}
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                        initial={{ x: "-100%" }}
+                        whileHover={{ x: "100%" }}
+                        transition={{ duration: 0.6 }}
+                      />
                     </div>
+                    
                     <div className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">
+                      <motion.h3 
+                        className="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors"
+                        initial={{ x: -20, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.15 + 0.4 }}
+                      >
                         {category.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-4">{category.description}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {category.materials.slice(0, 3).map((material, idx) => (
-                          <span key={idx} className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full">
+                      </motion.h3>
+                      <motion.p 
+                        className="text-gray-600 text-sm mb-4"
+                        initial={{ x: -20, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.15 + 0.5 }}
+                      >
+                        {category.description}
+                      </motion.p>
+                      <motion.div 
+                        className="flex flex-wrap gap-2"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.15 + 0.6 }}
+                      >
+                        {category.materials.slice(0, 3).map((material, matIdx) => (
+                          <motion.span 
+                            key={matIdx} 
+                            className="text-xs bg-gray-100 text-gray-700 px-3 py-1 rounded-full"
+                            initial={{ scale: 0 }}
+                            whileInView={{ scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.15 + 0.7 + matIdx * 0.1 }}
+                            whileHover={{ scale: 1.1, backgroundColor: "#D1FAE5", color: "#047857" }}
+                          >
                             {material}
-                          </span>
+                          </motion.span>
                         ))}
-                      </div>
+                      </motion.div>
                     </div>
-                  </div>
+
+                    {/* Corner accent */}
+                    <motion.div
+                      className="absolute top-0 right-0 w-16 h-16 bg-emerald-500 rounded-bl-full opacity-0 group-hover:opacity-10"
+                      initial={{ scale: 0, rotate: 0 }}
+                      whileHover={{ scale: 1, rotate: 180 }}
+                      transition={{ duration: 0.4 }}
+                    />
+                  </motion.div>
                 </Link>
               </motion.div>
             ))}
