@@ -31,21 +31,14 @@ const Header = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md' : 'bg-transparent'
+        }`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">M</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-xl text-gray-900">Meridian</span>
-              <span className="text-xs text-gray-600 -mt-1">Trade Global</span>
-            </div>
+            <img src="/logo.png" alt="Meridian Trade Global Logo" className="h-16 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -54,11 +47,10 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-emerald-600 ${
-                  location.pathname === item.path
-                    ? 'text-emerald-600'
-                    : 'text-gray-700'
-                }`}
+                className={`text-sm font-medium transition-colors hover:text-emerald-600 ${location.pathname === item.path
+                  ? 'text-emerald-600'
+                  : 'text-gray-700'
+                  }`}
               >
                 {item.label}
               </Link>
@@ -94,11 +86,10 @@ const Header = () => {
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-sm font-medium transition-colors hover:text-emerald-600 ${
-                    location.pathname === item.path
-                      ? 'text-emerald-600'
-                      : 'text-gray-700'
-                  }`}
+                  className={`text-sm font-medium transition-colors hover:text-emerald-600 ${location.pathname === item.path
+                    ? 'text-emerald-600'
+                    : 'text-gray-700'
+                    }`}
                 >
                   {item.label}
                 </Link>

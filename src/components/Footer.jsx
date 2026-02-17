@@ -10,13 +10,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">M</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-lg">Meridian</span>
-                <span className="text-xs text-gray-400">Trade Global</span>
-              </div>
+              <img src="/logo.png" alt="Meridian Trade Global Logo" className="h-16 w-auto" />
             </div>
             <p className="text-sm text-gray-400 mb-4">
               Sustainable Textiles. Global Reach. Timeless Quality.
