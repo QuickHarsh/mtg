@@ -207,9 +207,9 @@ export const trustLayers = [
 ];
 
 export const sourcingRegions = [
-  { name: 'India', speciality: 'Organic Cotton, Hand-woven Textiles' },
-  { name: 'Turkey', speciality: 'Premium Linens, Bath Textiles' },
-  { name: 'Portugal', speciality: 'Sustainable Manufacturing' },
-  { name: 'Bangladesh', speciality: 'Jute, Natural Fibers' },
-  { name: 'Nepal', speciality: 'Himalayan Wool, Artisan Crafts' }
+  { name: 'India', speciality: 'Organic Cotton, Hand-woven Textiles', location: [20.5937, 78.9629] },
+  { name: 'Turkey', speciality: 'Premium Linens, Bath Textiles', location: [38.9637, 35.2433] },
+  { name: 'Portugal', speciality: 'Sustainable Manufacturing', location: [39.3999, -8.2245] },
+  { name: 'Bangladesh', speciality: 'Jute, Natural Fibers', location: [23.6850, 90.3563] },
+  { name: 'Nepal', speciality: 'Himalayan Wool, Artisan Crafts', location: [28.3949, 84.1240] }
 ];

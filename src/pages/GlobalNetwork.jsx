@@ -1,9 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Globe, MapPin, Truck, Shield, Award, TrendingUp } from 'lucide-react';
+import { Globe as GlobeIcon, MapPin, Truck, Shield, Award, TrendingUp } from 'lucide-react';
 import { sourcingRegions } from '../data/mockData';
 
+import { WorldMap } from '../components/ui/world-map';
+
 const GlobalNetwork = () => {
+  // Manually map lat/long to approximate x/y on a 1000x500 svg grid
+  // Equirectangular projection: x = (lon + 180) * (1000 / 360), y = (90 - lat) * (500 / 180)
+  const mapDots = sourcingRegions
+    .filter(region => region.location)
+    .map(region => {
+      const lat = region.location[0];
+      const lon = region.location[1];
+      const x = (lon + 180) * (1000 / 360);
+      const y = (90 - lat) * (500 / 180);
+      return { x, y, label: region.name };
+    });
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#F5F3EF] to-white">
       {/* Hero Section */}
@@ -31,101 +45,30 @@ const GlobalNetwork = () => {
       <section className="py-16 px-6 bg-white">
         <div className="container mx-auto">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="relative bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl p-12 shadow-2xl overflow-hidden"
+            className="relative bg-[#0B1121] rounded-3xl p-4 md:p-12 shadow-2xl overflow-hidden border border-gray-800"
           >
-            {/* Background pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-10 left-10 w-64 h-64 bg-emerald-500 rounded-full blur-3xl" />
-              <div className="absolute bottom-10 right-10 w-64 h-64 bg-blue-500 rounded-full blur-3xl" />
-            </div>
 
             <div className="relative z-10">
               <h2 className="text-4xl font-bold text-white text-center mb-8">
                 Our Global Footprint
               </h2>
-              
+
               {/* World map placeholder */}
-              <div className="relative h-96 flex items-center justify-center">
-                <img
-                  src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&q=80"
-                  alt="Global network map"
-                  className="w-full h-full object-contain opacity-60"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <Globe className="w-24 h-24 text-emerald-400 mx-auto mb-4 animate-pulse" />
-                    <p className="text-2xl font-bold text-white">45+ Countries</p>
-                    <p className="text-emerald-300">Connected Globally</p>
-                  </div>
-                </div>
+              <div className="relative flex items-center justify-center">
+                <WorldMap dots={mapDots} />
+
               </div>
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-                {[
-                  { label: 'Sourcing Regions', value: '15+' },
-                  { label: 'Export Markets', value: '45+' },
-                  { label: 'Logistics Partners', value: '30+' },
-                  { label: 'Years Experience', value: '25+' }
-                ].map((stat, idx) => (
-                  <div key={idx} className="text-center">
-                    <div className="text-4xl font-bold text-emerald-400 mb-1">
-                      {stat.value}
-                    </div>
-                    <div className="text-gray-300 text-sm">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
+
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Sourcing Regions */}
-      <section className="py-20 px-6 bg-gradient-to-b from-white to-[#F5F3EF]">
-        <div className="container mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Primary Sourcing Regions
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Strategic partnerships across key textile manufacturing regions worldwide
-            </p>
-          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {sourcingRegions.map((region, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="text-emerald-600" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{region.name}</h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      <span className="font-semibold text-emerald-600">Specialty:</span> {region.speciality}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Trade Capabilities */}
       <section className="py-20 px-6 bg-white">
@@ -165,7 +108,7 @@ const GlobalNetwork = () => {
                 color: 'purple'
               },
               {
-                icon: Globe,
+                icon: GlobeIcon,
                 title: 'Multi-Currency Support',
                 description: 'Flexible payment terms with support for major international currencies and secure transaction processing.',
                 color: 'orange'
@@ -276,7 +219,7 @@ const GlobalNetwork = () => {
             viewport={{ once: true }}
             className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-3xl p-12 text-center text-white shadow-2xl"
           >
-            <Globe className="w-16 h-16 mx-auto mb-6" />
+            <GlobeIcon className="w-16 h-16 mx-auto mb-6" />
             <h2 className="text-4xl font-bold mb-6">
               Ready to Source Globally?
             </h2>

@@ -11,12 +11,14 @@ import WhyChooseUs from "@/pages/WhyChooseUs";
 import Contact from "@/pages/Contact";
 import { Toaster } from "@/components/ui/sonner";
 import SmoothScroll from "@/components/SmoothScroll";
+import ScrollToTop from "@/components/ScrollToTop";
 
 function App() {
   return (
     <SmoothScroll>
       <div className="App">
         <BrowserRouter>
+          <ScrollToTop />
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
