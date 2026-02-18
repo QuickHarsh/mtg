@@ -2,53 +2,52 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
-import { Button } from './button';
 
 export const ScrollTriggeredCard = ({ product, index }) => {
-    // Generate a hue based on index to keep the colorful vibe from the example, 
-    // or default to emerald/teal themes if preferred. 
-    // Let's use the example's gradient logic but adapted.
-    // We'll just use a subtle gradient for the splash background.
-    const hueA = (index * 40) % 360;
-    const hueB = (index * 40 + 50) % 360;
-    const background = `linear-gradient(306deg, hsl(${hueA}, 100%, 85%), hsl(${hueB}, 100%, 85%))`;
-
     return (
         <motion.div
-            className="relative flex items-center justify-center pt-5 mb-[-50px]"
+            className="flex flex-col h-full"
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.2 }}
+            custom={index}
         >
-            {/* Splash Background */}
-            <div
-                className="absolute inset-0 z-0"
-                style={{ ...splash, background }}
-            />
-
-            {/* Card Content */}
             <motion.div
                 variants={cardVariants}
-                className="relative z-10 bg-white rounded-2xl shadow-xl overflow-hidden w-full max-w-sm flex flex-col"
+                className="group relative bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col h-full hover:shadow-xl transition-shadow duration-300"
             >
-                <Link to={`/products#${product.id}`} className="block h-full">
-                    <div className="relative h-64 overflow-hidden bg-gray-100">
+                <Link to={`/products#${product.id}`} className="flex flex-col h-full">
+                    {/* Image Container */}
+                    <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
                         <img
                             src={product.image}
                             alt={product.title}
-                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
-                        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-gray-800 shadow-sm">
+                        <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-800 shadow-sm opacity-90 group-hover:opacity-100 transition-opacity">
                             {product.features[0]}
                         </div>
+
+                        {/* Overlay on hover */}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
                     </div>
 
-                    <div className="p-6 flex flex-col flex-grow">
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">{product.title}</h3>
-                        <p className="text-gray-600 text-sm mb-4 line-clamp-2">{product.description}</p>
+                    {/* Content */}
+                    <div className="p-5 flex flex-col flex-grow">
+                        <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors">
+                            {product.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm mb-4 line-clamp-2 flex-grow">
+                            {product.description}
+                        </p>
 
-                        <div className="mt-auto flex items-center text-emerald-600 font-semibold text-sm group">
-                            View Collection <ArrowRight size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
+                        <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                            <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                View Details
+                            </span>
+                            <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
+                                <ArrowRight size={14} />
+                            </div>
                         </div>
                     </div>
                 </Link>
@@ -59,33 +58,17 @@ export const ScrollTriggeredCard = ({ product, index }) => {
 
 const cardVariants = {
     offscreen: {
-        y: 150,
-        rotate: -5
+        y: 50,
+        opacity: 0
     },
-    onscreen: {
+    onscreen: (index) => ({
         y: 0,
-        rotate: 0,
+        opacity: 1,
         transition: {
             type: "spring",
-            bounce: 0.4,
-            duration: 0.8
+            bounce: 0.3,
+            duration: 0.8,
+            delay: index * 0.1 // Stagger effect
         }
-    }
-};
-
-const splash = {
-    clipPath: `path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z")`,
-    // Scaling the path might be tricky without a wrapper, so we might need to adjust or remove clipPath if it doesn't fit container.
-    // The path coordinates are fixed (0 to 500), so it might look distorted if the container isn't that size.
-    // Let's try a simpler blob shape or just a standard rounded div if this fails, 
-    // but the user specifically asked for "make it like that".
-    // I'll leave the clipPath but apply it to a container of fixed aspect ratio or similar.
-    // Actually, for responsiveness, SVG clip paths on HTML elements can be tricky. 
-    // I'll try to use a more responsive shape or just standard rounded corners if mapped to full width.
-    // But since I must follow "make it like that", I will try to use the path. 
-    // The path is roughly 500x450.
-    width: '120%',
-    height: '120%',
-    left: '-10%',
-    top: '-10%'
+    })
 };

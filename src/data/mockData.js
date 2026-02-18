@@ -2,52 +2,100 @@
 
 export const productCategories = [
   {
-    id: 'bedding',
-    title: 'Bedding',
-    description: 'Organic Cotton & Linen Bedding Designed for Global Retail',
-    materials: ['Organic Cotton', 'Linen', 'Hemp', 'Tencel/Lyocell'],
-    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
-    features: ['GOTS Certified', 'Natural Dyes', 'Custom Sizing', 'Private Label Available']
+    id: 'organic-cotton',
+    title: 'Organic Cotton',
+    description: 'Certified organic cotton sourced from sustainable farms.',
+    materials: ['Organic Cotton'],
+    image: 'https://images.unsplash.com/photo-1596541539665-24c63283f5d5?w=800&q=80',
+    features: ['GOTS Certified', 'Soft Touch', 'Durable', 'Eco-Friendly']
   },
   {
-    id: 'table-linens',
-    title: 'Table Linens',
-    description: 'Premium Table Textiles for Hospitality & Retail',
-    materials: ['Organic Cotton', 'Linen', 'Banana Fiber'],
-    image: 'https://images.unsplash.com/photo-1588854337221-4cf9fa96fba5?w=800&q=80',
-    features: ['Hospitality Grade', 'Stain Resistant', 'Custom Colors', 'Bulk Orders']
+    id: 'linen',
+    title: 'Linen',
+    description: 'Premium quality linen for breathable and durable textiles.',
+    materials: ['Linen'],
+    image: 'https://images.unsplash.com/photo-1627918379058-297d264f3366?w=800&q=80',
+    features: ['Natural Fiber', 'Breathable', 'Luxury Feel', 'Biodegradable']
   },
   {
-    id: 'throws-blankets',
-    title: 'Throws & Blankets',
-    description: 'Handwoven Sustainable Throws & Blankets',
-    materials: ['Wool', 'Organic Cotton', 'Recycled Cotton'],
-    image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?w=800&q=80',
-    features: ['Handwoven', 'Artisanal', 'Eco-Friendly', 'Custom Designs']
+    id: 'hemp',
+    title: 'Hemp',
+    description: 'Highly durable and sustainable hemp fibers.',
+    materials: ['Hemp'],
+    image: 'https://images.unsplash.com/photo-1592671960205-d85c86fcb8d1?w=800&q=80',
+    features: ['Antibacterial', 'Strong Fiber', 'Sustainable', 'Low Water Usage']
   },
   {
-    id: 'cushions',
-    title: 'Cushions & Pillow Covers',
-    description: 'Hand-Embroidered Artisanal Collections',
-    materials: ['GOTS Cotton', 'Peace Silk', 'Linen'],
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80',
-    features: ['Hand Embroidered', 'Custom Prints', 'Peace Silk', 'Artisan Made']
+    id: 'tencel-lyocell',
+    title: 'Tencel/Lyocell',
+    description: 'Soft and smooth eco-friendly fibers from wood pulp.',
+    materials: ['Tencel', 'Lyocell'],
+    image: 'https://images.unsplash.com/photo-1628100788607-bb8f50682255?w=800&q=80',
+    features: ['Silky Smooth', 'Moisture Wicking', 'Eco-Process', 'Biodegradable']
   },
   {
-    id: 'bath',
-    title: 'Bath Textiles',
-    description: 'Spa-Quality Organic Bath Textiles',
-    materials: ['Organic Cotton', 'Bamboo', 'Hemp Blends'],
+    id: 'banana-fiber',
+    title: 'Banana Fiber',
+    description: 'Innovative natural fiber extracted from banana stems.',
+    materials: ['Banana Fiber'],
+    image: 'https://images.unsplash.com/photo-1617345634676-e106a782b544?w=800&q=80',
+    features: ['Plant Based', 'Strong', 'Biodegradable', 'Unique Texture']
+  },
+  {
+    id: 'wool',
+    title: 'Wool',
+    description: 'Ethically sourced wool for warmth and texture.',
+    materials: ['Wool'],
+    image: 'https://images.unsplash.com/photo-1549429158-fc6215b22306?w=800&q=80',
+    features: ['Natural Insulation', 'Renewable', 'Biodegradable', 'Soft']
+  },
+  {
+    id: 'recycled-cotton',
+    title: 'Recycled Cotton',
+    description: 'Eco-conscious cotton recycled from post-consumer waste.',
+    materials: ['Recycled Cotton'],
+    image: 'https://images.unsplash.com/photo-1635336827055-6b32b13511eb?w=800&q=80',
+    features: ['Zero Waste', 'Sustainable', 'Soft', 'Circular Economy']
+  },
+  {
+    id: 'peace-silk',
+    title: 'Peace Silk',
+    description: 'Cruelty-free silk harvested without harming silkworms.',
+    materials: ['Peace Silk'],
+    image: 'https://images.unsplash.com/photo-1516131362776-857c5e2d1264?w=800&q=80',
+    features: ['Cruelty Free', 'Luxurious', 'Natural Sheen', 'Ethical']
+  },
+  {
+    id: 'bamboo-bath-mats',
+    title: 'Bamboo Bath Mats',
+    description: 'Fast-drying and mold-resistant bamboo bath accessories.',
+    materials: ['Bamboo'],
     image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=800&q=80',
-    features: ['Ultra Absorbent', 'Quick Dry', 'Spa Grade', 'Hospitality Ready']
+    features: ['Quick Dry', 'Antibacterial', 'Sustainable', 'Modern Look']
   },
   {
-    id: 'floor-coverings',
-    title: 'Floor Coverings',
-    description: 'Natural Fiber Rugs & Floor Textiles',
-    materials: ['Jute', 'Cotton', 'Wool', 'Mixed Fibers'],
-    image: 'https://images.unsplash.com/photo-1563298723-dcfebaa392e3?w=800&q=80',
-    features: ['Custom Sizing', 'Handwoven', 'Natural Dyes', 'Durable']
+    id: 'hemp-blends',
+    title: 'Hemp Blends',
+    description: 'Versatile blends combining hemp durability with softness.',
+    materials: ['Hemp', 'Cotton'],
+    image: 'https://images.unsplash.com/photo-1550974868-b3d957d5904d?w=800&q=80',
+    features: ['Durable', 'Soft Blend', 'Eco-Friendly', 'Versatile']
+  },
+  {
+    id: 'natural-fiber-rugs',
+    title: 'Natural-Fiber Rugs',
+    description: 'Handwoven rugs made from jute, sisal, and other naturals.',
+    materials: ['Jute', 'Sisal'],
+    image: 'https://images.unsplash.com/photo-1574577827253-ab05a764d26f?w=800&q=80',
+    features: ['Hard Wearing', 'Natural Look', 'Biodegradable', 'Handwoven']
+  },
+  {
+    id: 'handwoven-collections',
+    title: 'Handwoven Collections',
+    description: 'Artisanal textiles woven by skilled traditional weavers.',
+    materials: ['Mixed Naturals'],
+    image: 'https://images.unsplash.com/photo-1595159828557-41a46b4142f3?w=800&q=80',
+    features: ['Artisanal', 'Unique', 'Cultural Heritage', 'Handmade']
   }
 ];
 
