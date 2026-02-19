@@ -211,5 +211,9 @@ export const sourcingRegions = [
   { name: 'Turkey', speciality: 'Premium Linens, Bath Products', location: [38.9637, 35.2433] },
   { name: 'Portugal', speciality: 'Sustainable Manufacturing', location: [39.3999, -8.2245] },
   { name: 'Bangladesh', speciality: 'Jute, Natural Fibers', location: [23.6850, 90.3563] },
-  { name: 'Nepal', speciality: 'Himalayan Wool, Artisan Crafts', location: [28.3949, 84.1240] }
+  { name: 'Nepal', speciality: 'Himalayan Wool, Artisan Crafts', location: [28.3949, 84.1240] },
+  { name: 'UK', speciality: 'Sustainable Design, Retail Distribution', location: [55.3781, -3.4360] },
+  { name: 'USA', speciality: 'Innovation, Large Scale Retail', location: [37.0902, -95.7129] },
+  { name: 'Canada', speciality: 'Recycled Materials, Ethical Imports', location: [56.1304, -106.3468] },
+  { name: 'Vietnam', speciality: 'Bamboo, Sustainable Furniture', location: [14.0583, 108.2772] }
 ];
