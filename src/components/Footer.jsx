@@ -46,7 +46,6 @@ const Footer = () => {
               <li><Link to="/about" className="text-sm text-gray-400 hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/why-choose-us" className="text-sm text-gray-400 hover:text-white transition-colors">Why Choose Us</Link></li>
               <li><Link to="/contact" className="text-sm text-gray-400 hover:text-white transition-colors">Contact Support</Link></li>
-              <li><a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Careers</a></li>
             </ul>
           </div>
 
@@ -65,11 +64,9 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-gray-400 mb-4 md:mb-0">
-            © 2024 Meridian Trade Global. Sustainable Sourcing for the Future.
+            © 2026 Meridian Trade Global. Sustainable Sourcing for the Future.
           </p>
           <div className="flex items-center space-x-4">
-            <span className="text-xs text-emerald-400 font-medium">GOTS Certified</span>
-            <span className="text-xs text-gray-500">•</span>
             <span className="text-xs text-emerald-400 font-medium">B-Corp Verified</span>
             <span className="text-xs text-gray-500">•</span>
             <span className="text-xs text-emerald-400 font-medium">ISO 9001</span>

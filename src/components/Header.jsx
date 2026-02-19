@@ -37,12 +37,12 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2 z-50">
             <img src="/logo.png" alt="Meridian Trade Global Logo" className="h-16 w-auto" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          {/* Desktop Navigation - Centered in remaining space (shifts right) */}
+          <nav className="hidden lg:flex flex-1 items-center justify-center space-x-12">
             {navItems.map((item) => (
               <Link
                 key={item.path}
@@ -57,17 +57,10 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
-              Partner With Us
-            </Button>
-          </div>
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 ml-auto"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -94,9 +87,7 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-              <Button className="bg-emerald-600 hover:bg-emerald-700 text-white w-full">
-                Partner With Us
-              </Button>
+
             </nav>
           </motion.div>
         )}

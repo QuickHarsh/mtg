@@ -217,9 +217,9 @@ const Home = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { icon: CheckCircle, title: 'Quality Standards', color: 'emerald' },
-              { icon: Shield, title: 'Documentation', color: 'blue' },
+              { icon: Shield, title: 'Verified Certification', color: 'blue' },
               { icon: Globe, title: 'Global Network', color: 'purple' },
-              { icon: Users, title: 'Verified Suppliers', color: 'orange' }
+              { icon: Users, title: 'Verified Suppliers/Buyers', color: 'orange' }
             ].map((item, idx) => (
               <motion.div
                 key={idx}
@@ -343,7 +343,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
             >
-              A next-generation B2B marketplace simplifying sustainable sourcing for global trade.
+              A next-generation B2B simplifying sustainable sourcing for global trade.
             </motion.p>
           </motion.div>
 
@@ -518,7 +518,7 @@ const Home = () => {
               </Button>
             </Link>
             <p className="text-sm text-gray-500 mt-4">
-              • No commitment required for initial consultation
+              * No commitment required for initial consultation
             </p>
           </motion.div>
         </div>
@@ -553,7 +553,7 @@ const Home = () => {
                 }}
                 transition={{ duration: 5, repeat: Infinity }}
               >
-                Built on Responsible Sourcing
+                Built on Responsible Global Trade
               </motion.span>
             </motion.h2>
             <motion.p
@@ -563,7 +563,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              Every product meets rigorous environmental and ethical standards
+              Premium, verified, and ethically sourced products across categories.
             </motion.p>
           </motion.div>
 
@@ -573,7 +573,8 @@ const Home = () => {
                 leaf: Leaf,
                 droplets: Sparkles,
                 users: Users,
-                globe: Globe
+                globe: Globe,
+                shield: Shield
               };
               const Icon = icons[cert.icon];
 
@@ -678,7 +679,7 @@ const Home = () => {
                 Let's Build Responsible Supply Together
               </h2>
               <p className="text-xl text-emerald-50 mb-8 max-w-2xl mx-auto">
-                Join leading retailers and brands partnering with verified sustainable suppliers
+                Join leading retailers and brands partnering with verified sustainable suppliers and buyers
               </p>
               <Link to="/contact">
                 <Button className="bg-white text-emerald-600 hover:bg-gray-100 px-10 py-6 text-lg font-semibold shadow-xl">

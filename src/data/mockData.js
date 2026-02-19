@@ -101,24 +101,24 @@ export const productCategories = [
 
 export const sustainabilityCertifications = [
   {
-    title: 'GOTS Certified',
-    description: 'The world\'s leading processing standard for organic fibers and materials',
-    icon: 'leaf'
-  },
-  {
-    title: 'Natural Dye Processes',
-    description: 'Plant-based and mineral dyes with zero toxic chemicals',
-    icon: 'droplets'
-  },
-  {
-    title: 'Ethical Artisan Partnerships',
-    description: 'Fair wages and safe working environments across our supply chain',
+    title: 'Verified & Certified Producers',
+    description: 'We partner only with audited farms, artisan clusters, and certified manufacturers.',
     icon: 'users'
   },
   {
-    title: 'Traceable Supply Chains',
-    description: 'Full transparency from fiber to finished product',
+    title: 'Sustainable Materials Across Categories',
+    description: 'Organic textiles, natural fibers, responsibly sourced wood, recycled materials, and certified food ingredients.',
+    icon: 'leaf'
+  },
+  {
+    title: 'Ethical & Transparent Supply Chains',
+    description: 'Fair wages, safe production environments, and documented sourcing integrity.',
     icon: 'globe'
+  },
+  {
+    title: 'Export-Ready Compliance',
+    description: 'EU, UK, US, and international standards aligned for smooth global trade.',
+    icon: 'shield'
   }
 ];
 

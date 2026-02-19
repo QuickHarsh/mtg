@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, Target, Heart, Globe, Shield, Users } from 'lucide-react';
+import { Star, Lightbulb, Handshake, Globe, Shield, Users, Target } from 'lucide-react';
 
 const About = () => {
   return (
@@ -81,40 +81,46 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: Heart,
+                icon: Handshake,
                 title: 'Ethical Sourcing',
                 description: 'We partner only with suppliers who demonstrate fair labor practices, safe working conditions, and respect for artisan communities.',
-                color: 'red'
+                bgClass: 'bg-red-100',
+                textClass: 'text-red-600'
               },
               {
                 icon: Shield,
                 title: 'Quality Assurance',
                 description: 'Every product undergoes rigorous quality control, ensuring consistency and excellence across all orders.',
-                color: 'blue'
+                bgClass: 'bg-blue-100',
+                textClass: 'text-blue-600'
               },
               {
                 icon: Users,
                 title: 'Partnership Focus',
                 description: 'We build long-term relationships based on mutual growth, transparency, and shared commitment to sustainability.',
-                color: 'purple'
+                bgClass: 'bg-purple-100',
+                textClass: 'text-purple-600'
               },
               {
                 icon: Globe,
                 title: 'Global Expertise',
                 description: 'Decades of international trade experience, navigating complex logistics and compliance requirements seamlessly.',
-                color: 'emerald'
+                bgClass: 'bg-emerald-100',
+                textClass: 'text-emerald-600'
               },
               {
-                icon: Award,
+                icon: Star,
                 title: 'Excellence',
                 description: 'Uncompromising standards in product quality, customer service, and operational reliability.',
-                color: 'amber'
+                bgClass: 'bg-amber-100',
+                textClass: 'text-amber-600'
               },
               {
-                icon: Target,
+                icon: Lightbulb,
                 title: 'Innovation',
                 description: 'Continuously advancing sustainable practices and exploring new materials and techniques.',
-                color: 'indigo'
+                bgClass: 'bg-indigo-100',
+                textClass: 'text-indigo-600'
               }
             ].map((value, idx) => (
               <motion.div
@@ -125,8 +131,8 @@ const About = () => {
                 transition={{ delay: idx * 0.1 }}
                 className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className={`w-14 h-14 bg-${value.color}-100 rounded-xl flex items-center justify-center mb-4`}>
-                  <value.icon className={`text-${value.color}-600`} size={28} />
+                <div className={`w-14 h-14 ${value.bgClass} rounded-xl flex items-center justify-center mb-4`}>
+                  <value.icon className={value.textClass} size={28} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{value.description}</p>
