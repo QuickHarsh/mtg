@@ -239,7 +239,7 @@ const WhyChooseUs = () => {
               'Sustainability-focused retailers seeking verified eco-products',
               'Boutique brands requiring custom development support',
               'Hospitality groups needing consistent bulk supply',
-              'Interior designers sourcing artisanal textiles',
+              'Interior designers sourcing artisanal products',
               'E-commerce brands launching sustainable lines',
               'Corporate buyers prioritizing ethical sourcing'
             ].map((profile, idx) => (
@@ -272,7 +272,7 @@ const WhyChooseUs = () => {
               Experience the Meridian Difference
             </h2>
             <p className="text-xl text-emerald-50 mb-8 max-w-2xl mx-auto">
-              Join leading brands that trust Meridian Trade Global for sustainable textile sourcing
+              Join leading brands that trust Meridian Trade Global for sustainable product sourcing
             </p>
             <Link to="/contact">
               <Button className="bg-white text-emerald-600 hover:bg-gray-100 px-10 py-6 text-lg font-semibold shadow-xl">

@@ -12,7 +12,7 @@ export const productCategories = [
   {
     id: 'linen',
     title: 'Linen',
-    description: 'Premium quality linen for breathable and durable textiles.',
+    description: 'Premium quality linen for breathable and durable products.',
     materials: ['Linen'],
     image: 'https://images.unsplash.com/photo-1627918379058-297d264f3366?w=800&q=80',
     features: ['Natural Fiber', 'Breathable', 'Luxury Feel', 'Biodegradable']
@@ -92,7 +92,7 @@ export const productCategories = [
   {
     id: 'handwoven-collections',
     title: 'Handwoven Collections',
-    description: 'Artisanal textiles woven by skilled traditional weavers.',
+    description: 'Artisanal goods woven by skilled traditional weavers.',
     materials: ['Mixed Naturals'],
     image: 'https://images.unsplash.com/photo-1595159828557-41a46b4142f3?w=800&q=80',
     features: ['Artisanal', 'Unique', 'Cultural Heritage', 'Handmade']
@@ -102,7 +102,7 @@ export const productCategories = [
 export const sustainabilityCertifications = [
   {
     title: 'GOTS Certified',
-    description: 'Global Organic Textile Standard certification for all organic materials',
+    description: 'The world\'s leading processing standard for organic fibers and materials',
     icon: 'leaf'
   },
   {
@@ -125,7 +125,7 @@ export const sustainabilityCertifications = [
 export const whyChooseUs = [
   {
     title: 'Premium Eco-Sourcing Expertise',
-    description: 'Decades of experience in sustainable textile sourcing across Asia and beyond',
+    description: 'Decades of experience in sustainable product sourcing across Asia and beyond',
     icon: 'award'
   },
   {
@@ -166,7 +166,7 @@ export const howItWorksSteps = [
   {
     step: 1,
     title: 'Browse & Shortlist',
-    description: 'Explore our curated collection of eco-conscious home textiles and select products that match your brand values.',
+    description: 'Explore our curated collection of eco-conscious home products and select products that match your brand values.',
     badge: 'Verified'
   },
   {
@@ -207,8 +207,8 @@ export const trustLayers = [
 ];
 
 export const sourcingRegions = [
-  { name: 'India', speciality: 'Organic Cotton, Hand-woven Textiles', location: [20.5937, 78.9629] },
-  { name: 'Turkey', speciality: 'Premium Linens, Bath Textiles', location: [38.9637, 35.2433] },
+  { name: 'India', speciality: 'Organic Cotton, Hand-woven Goods', location: [20.5937, 78.9629] },
+  { name: 'Turkey', speciality: 'Premium Linens, Bath Products', location: [38.9637, 35.2433] },
   { name: 'Portugal', speciality: 'Sustainable Manufacturing', location: [39.3999, -8.2245] },
   { name: 'Bangladesh', speciality: 'Jute, Natural Fibers', location: [23.6850, 90.3563] },
   { name: 'Nepal', speciality: 'Himalayan Wool, Artisan Crafts', location: [28.3949, 84.1240] }

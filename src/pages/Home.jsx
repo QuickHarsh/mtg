@@ -124,7 +124,7 @@ const Home = () => {
               >
                 <motion.img
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80"
-                  alt="Artisan crafting textiles"
+                  alt="Artisan crafting products"
                   className="w-full h-[500px] object-cover"
                   initial={{ scale: 1.2 }}
                   animate={{ scale: 1 }}
@@ -280,7 +280,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.6 }}
             >
-              Premium eco-conscious home textiles sourced responsibly and delivered globally
+              Premium eco-conscious home products sourced responsibly and delivered globally
             </motion.p>
           </motion.div>
 

@@ -20,7 +20,7 @@ const About = () => {
               Building Bridges Between Craftsmanship and Global Commerce
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              We are a premium sourcing and distribution partner specializing in eco-conscious home textiles, connecting artisanal craftsmanship with international retail markets.
+              We are a premium sourcing and distribution partner specializing in eco-conscious home products, connecting artisanal craftsmanship with international retail markets.
             </p>
           </motion.div>
         </div>
@@ -41,7 +41,7 @@ const About = () => {
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
               <p className="text-gray-700 leading-relaxed">
-                To transform global textile sourcing by combining environmental responsibility with exceptional quality, creating sustainable value chains that empower artisans and serve discerning retailers worldwide.
+                To transform global product sourcing by combining environmental responsibility with exceptional quality, creating sustainable value chains that empower artisans and serve discerning retailers worldwide.
               </p>
             </motion.div>
 
@@ -56,7 +56,7 @@ const About = () => {
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Vision</h2>
               <p className="text-gray-700 leading-relaxed">
-                To become the world's most trusted platform for sustainable textile sourcing, where every transaction advances environmental stewardship and supports ethical craftsmanship across global supply chains.
+                To become the world's most trusted platform for sustainable product sourcing, where every transaction advances environmental stewardship and supports ethical craftsmanship across global supply chains.
               </p>
             </motion.div>
           </div>
@@ -237,7 +237,7 @@ const About = () => {
               Commitment to Responsible Growth
             </h2>
             <p className="text-xl text-emerald-50 leading-relaxed mb-8">
-              We believe that business success and environmental responsibility are not mutually exclusive. Every partnership we form, every product we source, and every transaction we facilitate is designed to create positive impact—for our partners, for artisan communities, and for the planet.
+              We believe that business success and environmental responsibility are not mutually exclusive. Every partnership we form, every product we source, and every transaction we facilitate is designed to create positive impact for our partners, for artisan communities, and for the planet.
             </p>
             <p className="text-lg text-emerald-100 leading-relaxed">
               This is not just our business model. It is our commitment to future generations.

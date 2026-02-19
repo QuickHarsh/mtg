@@ -13,7 +13,7 @@ const Footer = () => {
               <img src="/logo.png" alt="Meridian Trade Global Logo" className="h-16 w-auto" />
             </div>
             <p className="text-sm text-gray-400 mb-4">
-              Sustainable Textiles. Global Reach. Timeless Quality.
+              Sustainable Products. Global Reach. Timeless Quality.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-emerald-400 transition-colors">

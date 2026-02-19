@@ -63,7 +63,7 @@ const Sustainability = () => {
     {
       metric: '-42%',
       label: 'Carbon Footprint',
-      description: 'Reduced emissions compared to conventional textile production'
+      description: 'Reduced emissions compared to conventional production methods'
     },
     {
       metric: '100%',
@@ -133,7 +133,7 @@ const Sustainability = () => {
               Environmental Authority Through Action
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Our commitment to sustainability is not a marketing claim—it's a structured, measurable framework embedded in every aspect of our operations.
+              Our commitment to sustainability is not a marketing claim - it is a structured, measurable framework embedded in every aspect of our operations.
             </p>
           </motion.div>
         </div>

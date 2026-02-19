@@ -20,10 +20,10 @@ const Products = () => {
               Product Collections
             </span>
             <h1 className="text-5xl font-bold text-gray-900 mt-4 mb-6">
-              Eco-Conscious Home Textiles for Global Markets
+              Eco-Conscious Home Products for Global Markets
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Premium sustainable textiles sourced from verified artisans and manufacturers worldwide
+              Premium sustainable products sourced from verified artisans and manufacturers worldwide
             </p>
           </motion.div>
         </div>
@@ -191,7 +191,7 @@ const Products = () => {
             className="bg-gradient-to-br from-emerald-600 to-emerald-700 rounded-3xl p-12 text-center text-white shadow-2xl"
           >
             <h2 className="text-4xl font-bold mb-6">
-              Ready to Source Premium Textiles?
+              Ready to Source Premium Products?
             </h2>
             <p className="text-xl text-emerald-50 mb-8 max-w-2xl mx-auto">
               Request a detailed product catalog and pricing information tailored to your requirements
